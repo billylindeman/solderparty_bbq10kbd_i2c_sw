@@ -77,12 +77,14 @@ static void gpio_set_dir(uint8_t gpio, uint8_t gpio_idx, uint8_t int_chan, extin
 
 		extint_chan_set_config(int_chan, &config_extint_chan);
 		extint_register_callback(int_cb, int_chan, EXTINT_CALLBACK_TYPE_DETECT);
-		extint_chan_enable_callback(10, EXTINT_CALLBACK_TYPE_DETECT);
+		extint_chan_enable_callback(int_chan, EXTINT_CALLBACK_TYPE_DETECT);
 
 		reg_set_bit(REG_ID_DIR, (1 << gpio_idx));
 	} else {
 		struct port_config port_cfg;
 		port_get_config_defaults(&port_cfg);
+
+		extint_chan_disable_callback(int_chan, EXTINT_CALLBACK_TYPE_DETECT);
 
 		port_cfg.direction = PORT_PIN_DIR_OUTPUT;
 
