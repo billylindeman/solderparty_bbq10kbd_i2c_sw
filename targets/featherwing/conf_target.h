@@ -23,6 +23,16 @@
 #define EIC_GPIO0						12
 #define PIN_GPIO1						PIN_PA10
 #define EIC_GPIO1						10
+#define PIN_GPIO2						PIN_PB23
+#define EIC_GPIO2						7
+#define PIN_GPIO3						PIN_PA27
+#define EIC_GPIO3						15
+#define PIN_GPIO4						PIN_PA28
+#define EIC_GPIO4						8
+#define PIN_GPIO5						PIN_PB02
+#define EIC_GPIO5						2
+#define PIN_GPIO6						PIN_PB03
+#define EIC_GPIO6						3
 
 #define NUM_OF_COLS						5
 #define NUM_OF_ROWS						7
